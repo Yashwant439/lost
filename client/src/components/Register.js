@@ -68,7 +68,7 @@ const Register = ({ setUser }) => {
           </button>
         </form>
       </div>
-        <Toast show={toastVisible} message={"Backend stopped temporarily — try later."} onClose={() => setToastVisible(false)} />
+        <Toast show={toastVisible} message={"Yashwant stopped backend temporarily--try later."} onClose={() => setToastVisible(false)} />
     </div>
   );
 };
