@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import Toast from './Toast'; //TBD
 
 const Login = ({ setUser }) => {
   const [rollNumber, setRollNumber] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const [toastVisible, setToastVisible] = useState(false);//TBD
   
   const handleLogin = async (e) => {
     e.preventDefault();
+    // show toast informing about backend status
+    setToastVisible(true);//TBD
     
     try {
       setLoading(true);
@@ -86,6 +90,8 @@ const Login = ({ setUser }) => {
           </button>
         </form>
       </div>
+            //TBD
+      <Toast show={toastVisible} message={"Backend stopped temporarily — try later."} onClose={() => setToastVisible(false)} /> 
     </div>
   );
 };
