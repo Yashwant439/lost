@@ -89,7 +89,7 @@ const Login = ({ setUser }) => {
         </form>
       </div>
             //TBD
-      <Toast show={toastVisible} message={"Yashwant stopped backend,meow."} onClose={() => setToastVisible(false)} /> 
+      <Toast show={toastVisible} message={"Yashwant stopped backend temporarily--try later."} onClose={() => setToastVisible(false)} /> 
     </div>
   );
 };
