@@ -1,16 +1,20 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
+import Toast from './Toast'; //TBD
 const Register = ({ setUser }) => {
   const [rollNumber, setRollNumber] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [toastVisible, setToastVisible] = useState(false);
 
   const handleRegister = async (e) => {
     e.preventDefault();
     setError('');
     setSuccess(false);
+    // show toast informing about backend status
+    setToastVisible(true);
     try {
       setLoading(true);
       const API_URL = process.env.REACT_APP_API_URL || '';
@@ -64,6 +68,7 @@ const Register = ({ setUser }) => {
           </button>
         </form>
       </div>
+        <Toast show={toastVisible} message={"Backend stopped temporarily — try later."} onClose={() => setToastVisible(false)} />
     </div>
   );
 };
